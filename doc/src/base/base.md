@@ -185,6 +185,7 @@ Base.fieldname
 Core.fieldtype
 Base.fieldtypes
 Base.fieldcount
+Base.fieldisatomic
 Base.hasfield
 Core.nfields
 Base.isconst

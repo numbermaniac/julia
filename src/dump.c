@@ -1933,7 +1933,7 @@ static jl_value_t *jl_deserialize_value_method_instance(jl_serializer_state *s, 
     arraylist_push(&backref_list, mi);
     int internal = read_uint8(s->s);
     if (internal == 1) {
-        mi->uninferred = jl_deserialize_value(s, &mi->uninferred);
+        mi->uninferred = jl_deserialize_value(s, (jl_value_t**)&mi->uninferred);
         jl_gc_wb(mi, mi->uninferred);
     }
     mi->specTypes = (jl_value_t*)jl_deserialize_value(s, (jl_value_t**)&mi->specTypes);
