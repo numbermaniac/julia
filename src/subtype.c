@@ -3528,7 +3528,7 @@ jl_value_t *jl_type_intersection_env_s(jl_value_t *a, jl_value_t *b, jl_svec_t *
             if (jl_is_uniontype(ans_unwrapped)) {
                 ans_unwrapped = switch_union_tuple(((jl_uniontype_t*)ans_unwrapped)->a, ((jl_uniontype_t*)ans_unwrapped)->b);
                 if (ans_unwrapped != NULL) {
-                    *ans = jl_rewrap_unionall(ans_unwrapped, *ans);
+                    *ans = jl_rewrap_unionall_(ans_unwrapped, *ans);
                 }
             }
             JL_GC_POP();
